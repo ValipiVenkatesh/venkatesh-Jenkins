@@ -14,7 +14,7 @@ pipeline {
       echo "good Morning, $FIRST_NAME"
       sh '''
         hostname
-        cat /etc/ubuntu-release
+        ubuntu --version
       '''
     }
   }
