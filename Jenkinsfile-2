@@ -14,7 +14,7 @@ pipeline {
       echo "good Morning, $FIRST_NAME"
       sh '''
         hostname
-        ubuntu --version
+        cat /etc/lsb-release
       '''
     }
   }
