@@ -1,0 +1,28 @@
+pipeline {
+  agent none
+  stages {
+    stage('input') {
+      agent any 
+      when {
+        beforeInput true
+        branch 'main'
+      }
+      input {
+        message "What is your first name?"
+        ok "Submit"
+        parameters {
+          string(defaultValue: 'venkatesh', name: 'FIRST_NAME',)
+       }
+     }
+     steps {
+      echo "good Morning, $FIRST_NAME"
+      sh '''
+        hostname
+        cat /etc/ubuntu-release
+      '''
+    }
+  }
+}
+}
+
+         
